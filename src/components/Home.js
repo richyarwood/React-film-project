@@ -9,7 +9,7 @@ class Home extends React.Component {
     super()
 
     this.state = {
-      searchInput: [],
+      search: [],
       data: []
     }
 
@@ -18,14 +18,14 @@ class Home extends React.Component {
   }
 
   handleChange(e){
-    const data = ({ ...this.state.searchInput, [e.target.name]: e.target.value })
-    this.setState({ searchInput: data })
+    const data = ({ ...this.state.search, [e.target.name]: e.target.value })
+    this.setState({ search: data })
   }
 
   handleSubmit(e){
     e.preventDefault()
-    axios.get(`http://www.omdbapi.com/?&apikey=3d00f47d&s="${this.state.searchInput}"`)
-    .then(res => this.setState({ data: res.data }))
+    axios.get(`http://www.omdbapi.com/?&apikey=3d00f47d&s="${this.state.search.searchInput}"`)
+      .then(res => this.setState({ data: res.data }))
   }
 
   render() {
@@ -34,19 +34,19 @@ class Home extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  name="searchInput"
-                  placeholder="Search for a film. Eg Bladerunner"
-                  onChange={this.handleChange}
-                  />
+              <input
+                className="input"
+                type="text"
+                name="searchInput"
+                placeholder="Search for a film. Eg Bladerunner"
+                onChange={this.handleChange}
+              />
             </div>
           </div>
           <button className="button is-black">Search</button>
         </form>
         <section className="section">
-        <FilmIndex { ...this.state.data } />
+          <FilmIndex { ...this.state.data } />
         </section>
       </div>
     )
