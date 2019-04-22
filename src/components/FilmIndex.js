@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import FilmCard from './FilmCard'
 
 
 class FilmIndex extends React.Component {
@@ -11,14 +14,16 @@ class FilmIndex extends React.Component {
     console.log(this.props, 'filmindex')
     if(!this.props.Search) return null
     return(
-      <section className="section">
+      <div className="columns is-multiline">
         {this.props.Search.map(film =>
-          <div key={film.imdbID} className="column is-one-quarter-desktop is-one-third-tablet">
-            {film.Title}
+          <div key={film.imdbID} className="column is-one-fifth-desktop is-one-half-tablet">
+            <Link to={`/films/${film.imdbID}`}>
+              <FilmCard {...film} />
+            </Link>
           </div>
         )}
 
-      </section>
+      </div>
     )
   }
 }
