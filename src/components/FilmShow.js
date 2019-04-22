@@ -17,7 +17,6 @@ class FilmShow extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     if(!this.state.film) return null
 
     return(
@@ -48,8 +47,6 @@ class FilmShow extends React.Component {
                   <p><strong>Awards:</strong> {this.state.film.Awards}</p>
                 </div>
               </div>
-
-
               <div className="subtitle is-5">Plot</div>
               <p>{this.state.film.Plot}</p>
             </div>

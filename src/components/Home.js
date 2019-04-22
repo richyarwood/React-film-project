@@ -25,10 +25,34 @@ class Home extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     axios.get(`http://www.omdbapi.com/?&apikey=3d00f47d&s="${this.state.search.searchInput}"`)
-      .then(res => this.setState({ data: res.data }))
+      .then(res => this.setState({ data: res.data })
+      )
   }
 
   render() {
+    if(this.state.data.Response === 'False')
+      return (
+        <section className="section">
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="searchInput"
+                  placeholder="Search for a film. Eg Bladerunner"
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <button className="button is-black">Search</button>
+          </form>
+          <section className="section">
+            <div className="notification is-danger">No film of that name. Search again</div>
+          </section>
+        </section>
+      )
+    console.log(this.state.data)
     return(
       <section className="section">
         <form onSubmit={this.handleSubmit}>

@@ -6,7 +6,7 @@ import 'bulma'
 
 import Home from './components/Home'
 import FilmShow from './components/FilmShow'
-
+import NavBar from './components/NavBar'
 
 import './style.scss'
 
@@ -14,6 +14,7 @@ class App extends React.Component {
   render() {
     return(
       <Router>
+        <NavBar />
         <div className="container">
           <Switch>
             <Route path="/films/:id" component={FilmShow} />
