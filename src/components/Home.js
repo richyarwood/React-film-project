@@ -30,7 +30,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div className="container">
+      <section className="section">
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <div className="control">
@@ -48,7 +48,7 @@ class Home extends React.Component {
         <section className="section">
           <FilmIndex { ...this.state.data } />
         </section>
-      </div>
+      </section>
     )
   }
 }

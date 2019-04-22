@@ -14,12 +14,12 @@ class App extends React.Component {
   render() {
     return(
       <Router>
-        <section className="section">
+        <div className="container">
           <Switch>
             <Route path="/films/:id" component={FilmShow} />
             <Route exact path='/' component={Home} />
           </Switch>
-        </section>
+        </div>
       </Router>
     )
   }
