@@ -40,7 +40,7 @@ class Home extends React.Component {
                   className="input"
                   type="text"
                   name="searchInput"
-                  placeholder="Search for a film. Eg Bladerunner"
+                  placeholder="Search for a film. Eg Blade Runner"
                   onChange={this.handleChange}
                 />
               </div>

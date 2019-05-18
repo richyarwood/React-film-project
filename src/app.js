@@ -17,7 +17,7 @@ class App extends React.Component {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route path="/films/:id" component={FilmShow} />
+            <Route path='/films/:id' component={FilmShow} />
             <Route exact path='/' component={Home} />
           </Switch>
         </div>

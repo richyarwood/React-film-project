@@ -1,14 +1,22 @@
 {
-  "name": "react-film-project",
+  "name": "react-project-01",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple React application consuming open source APIs.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richyarwood/React-project-01.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richyarwood/React-project-01/issues"
+  },
+  "homepage": "https://github.com/richyarwood/React-project-01#readme",
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
